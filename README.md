@@ -45,4 +45,4 @@ Siéntete libre de realizar cualquier cambio al mensaje `updateQuality` y agrega
 Para aclarar: un artículo nunca puede tener una `calidad` superior a `50`, sin embargo las Sulfuras siendo un artículo legendario posee una calidad inmutable de `80`.
 ## Better Code Hub
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/emilybache/GildedRose-Refactoring-Kata?branch=master)](https://bettercodehub.com/) 
+[![BCH compliance](https://bettercodehub.com/edge/badge/ibrizuela-eb/GildedRose-Refactoring-Kata?branch=main)](https://bettercodehub.com/)
