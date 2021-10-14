@@ -13,6 +13,8 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose.update_quality()
         self.assertEqual("foo", gilded_rose.items[0].name)
 
+    # TODO
+    # This item class should be a normal item
     def test_should_degradate_item_quality_by_2_when_date_has_expired(self):
         items = [Item(name="+5 Dexterity Vest", sell_in=0, quality=20)]
         gilded_rose = GildedRose(items)
@@ -49,8 +51,8 @@ class GildedRoseTest(unittest.TestCase):
 
     @parameterized.expand([
         (Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=30), 32),
-        (Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=6, quality=30), 32),
-        (Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=11, quality=30), 31),
+        (Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=7, quality=30), 32),
+        (Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=12, quality=30), 31),
     ])
     def test_should_increase_quality_by_2_if_6_or_10_days_are_missing(self, item, expected):
         items = [item]

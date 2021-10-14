@@ -32,8 +32,8 @@ class Ticket(Item):
     def update_degradation(self):
         if self.sell_in > 10:
             return 1
-        elif 5 < self.sell_in < 10:
+        elif 5 < self.sell_in <= 10:
             return 2
-        elif 0 <= self.sell_in < 5:
+        elif 0 <= self.sell_in <= 5:
             return 3
         return 0

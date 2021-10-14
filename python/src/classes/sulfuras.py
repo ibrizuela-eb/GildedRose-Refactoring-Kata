@@ -14,8 +14,5 @@ class Sulfuras(Item):
             quality=quality,
         )
 
-    def pass_day(self):
-        self.sell_in -= 1
-
     def update_quality(self):
-        self.pass_day()
+        pass
