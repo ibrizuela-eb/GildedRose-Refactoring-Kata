@@ -79,7 +79,7 @@ class GildedRoseTest(unittest.TestCase):
     """New specifications
     """
     def test_should_degradate_conjured_by_2_when_date_is_before_expire(self):
-        items = [Item(name="+5 Dexterity Vest", sell_in=10, quality=20)]
+        items = [Item(name="Conjured Mana Cake", sell_in=10, quality=20)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEqual(18, gilded_rose.items[0].quality)

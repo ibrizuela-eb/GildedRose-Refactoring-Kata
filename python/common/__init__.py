@@ -1,12 +1,4 @@
-from ..src.classes.cheese import Cheese
-from ..src.classes.conjured import Conjured
-from ..src.classes.sulfuras import Sulfuras
-from ..src.classes.ticket import Ticket
-
-
-ITEM_CLASES = {
-    "Aged Brie": Cheese,
-    "Sulfuras, Hand of Ragnaros": Sulfuras,
-    "Backstage passes to a TAFKAL80ETC concert": Ticket,
-    "+5 Dexterity Vest": Conjured,
-}
+CHEESE_ITEM_NAMES = ["Aged Brie"]
+CONJURED_ITEM_NAMES = ["Conjured Mana Cake"]
+SULFURAS_ITEM_NAMES = ["Sulfuras, Hand of Ragnaros"]
+TICKET_ITEM_NAMES = ["Backstage passes to a TAFKAL80ETC concert"]
