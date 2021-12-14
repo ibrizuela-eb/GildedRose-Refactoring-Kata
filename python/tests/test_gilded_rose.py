@@ -83,6 +83,12 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEqual(18, gilded_rose.items[0].quality)
+    
+    def test_should_degradate_conjured_by_4_when_date_has_expired(self):
+        items = [Item(name="Conjured Mana Cake", sell_in=0, quality=20)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEqual(16, gilded_rose.items[0].quality)
 
     def test_should_not_modify_quality_of_sulfura_item_when_a_day_has_passed(self):
         items = [Item(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80)]
