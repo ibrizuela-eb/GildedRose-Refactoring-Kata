@@ -4,7 +4,6 @@ from . import (
     SULFURAS_ITEM_NAMES,
     TICKET_ITEM_NAMES,
 )
-from python.src.classes.item import Item
 from ..src.classes.cheese import Cheese
 from ..src.classes.conjured import Conjured
 from ..src.classes.normal_item import NormalItem
@@ -15,6 +14,12 @@ from ..src.classes.ticket import Ticket
 class Factory:
     def __init__(self, items=[]):
         self.items = self.parse_items(items)
+        self.inventory = {
+            Cheese: CHEESE_ITEM_NAMES,
+            Conjured: CONJURED_ITEM_NAMES,
+            Sulfuras: SULFURAS_ITEM_NAMES,
+            Ticket: TICKET_ITEM_NAMES,
+        }
 
     def parse_items(self, items):
         return [
@@ -24,14 +29,10 @@ class Factory:
         ]
 
     def get_item_class(self, item_name):
-        if item_name in CHEESE_ITEM_NAMES:
-            return Cheese
-        elif item_name in CONJURED_ITEM_NAMES:
-            return Conjured
-        elif item_name in SULFURAS_ITEM_NAMES:
-            return Sulfuras
-        elif item_name in TICKET_ITEM_NAMES:
-            return Ticket
+        for item_inventory in self.inventory.items():
+            item_class, item_names = item_inventory
+            if item_name in item_names:
+                return item_class
         return NormalItem
 
     def create_new_item(self, item):
