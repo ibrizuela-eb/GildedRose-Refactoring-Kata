@@ -1,7 +1,7 @@
-from .item import Item
+from .normal_item import NormalItem
 
 
-class Cheese(Item):
+class Cheese(NormalItem):
     def __init__(
         self,
         name,
@@ -14,17 +14,11 @@ class Cheese(Item):
             quality,
         )
 
-    def pass_day(self):
-        self.sell_in -= 1
-
     def update_quality(self):
         self.pass_day()
         degradation = self.update_degradation()
         if self.quality_can_change():
             self.quality += degradation
-
-    def quality_can_change(self):
-        return True if self.quality < 50 else False
 
     def update_degradation(self):
         return (

@@ -1,7 +1,7 @@
-from .item import Item
+from .normal_item import NormalItem
 
 
-class Ticket(Item):
+class Ticket(NormalItem):
     def __init__(
         self,
         name,
@@ -14,9 +14,6 @@ class Ticket(Item):
             quality,
         )
 
-    def pass_day(self):
-        self.sell_in -= 1
-
     def update_quality(self):
         self.pass_day()
         degradation = self.update_degradation()
@@ -25,9 +22,6 @@ class Ticket(Item):
                 self.quality += degradation
         else:
             self.quality = 0
-
-    def quality_can_change(self):
-        return True if self.quality < 50 else False
 
     def update_degradation(self):
         if self.sell_in > 10:
