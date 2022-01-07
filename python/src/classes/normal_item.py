@@ -1,4 +1,5 @@
 from .item import Item
+from ..constants import MAX_ITEM_QUALITY
 
 
 class NormalItem(Item):
@@ -24,7 +25,7 @@ class NormalItem(Item):
             self.quality += degradation
 
     def quality_can_change(self):
-        return True if 0 < self.quality < 50 else False
+        return True if 0 < self.quality < MAX_ITEM_QUALITY else False
 
     def update_degradation(self):
         return (
