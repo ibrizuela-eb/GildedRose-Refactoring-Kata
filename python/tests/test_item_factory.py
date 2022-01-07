@@ -4,9 +4,10 @@ from parameterized import parameterized
 from ..common.factory import Factory
 from ..src.classes.cheese import Cheese
 from ..src.classes.conjured import Conjured
+from ..src.classes.item import Item
+from ..src.classes.normal_item import NormalItem
 from ..src.classes.sulfuras import Sulfuras
 from ..src.classes.ticket import Ticket
-from ..src.classes.item import Item
 
 
 class ItemFactoryTests(unittest.TestCase):
@@ -29,13 +30,13 @@ class ItemFactoryTests(unittest.TestCase):
         items = [
             Item(name="+5 Dexterity Vest", sell_in=10, quality=20),
             Item(name="Aged Brie", sell_in=2, quality=0),
-            # Item(name="Elixir of the Mongoose", sell_in=5, quality=7),
+            Item(name="Elixir of the Mongoose", sell_in=5, quality=7),
             Item(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80),
             Item(name="Sulfuras, Hand of Ragnaros", sell_in=-1, quality=80),
             Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=20),
             Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=49),
             Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
-            # Item(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
+            Item(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
         ]
         factory = Factory()
         new_items = factory.parse_items(items)
@@ -43,10 +44,12 @@ class ItemFactoryTests(unittest.TestCase):
         item_classes_expected = [
             Conjured,
             Cheese,
+            NormalItem,
             Sulfuras,
             Sulfuras,
             Ticket,
             Ticket,
             Ticket,
+            Conjured,
         ]
         self.assertEqual(item_classes, item_classes_expected)
