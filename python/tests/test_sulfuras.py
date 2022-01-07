@@ -1,7 +1,7 @@
 from parameterized import parameterized
 import unittest
 
-from ..src.sulfuras import Sulfuras
+from ..src.classes.sulfuras import Sulfuras
 
 
 class SulfurasTets(unittest.TestCase):

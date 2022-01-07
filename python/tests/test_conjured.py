@@ -1,7 +1,7 @@
 from parameterized import parameterized
 import unittest
 
-from ..src.conjured import Conjured
+from ..src.classes.conjured import Conjured
 
 
 class ConjuredTets(unittest.TestCase):

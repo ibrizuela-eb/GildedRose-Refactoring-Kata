@@ -16,13 +16,13 @@ class GildedRoseTest(unittest.TestCase):
     # TODO
     # This item class should be a normal item
     def test_should_degradate_item_quality_by_2_when_date_has_expired(self):
-        items = [Item(name="+5 Dexterity Vest", sell_in=0, quality=20)]
+        items = [Item(name="Normal item", sell_in=0, quality=20)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEqual(18, gilded_rose.items[0].quality)
 
     def test_quality_could_never_be_negative(self):
-        items = [Item(name="+5 Dexterity Vest", sell_in=0, quality=0)]
+        items = [Item(name="Normal item", sell_in=0, quality=0)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEqual(0, gilded_rose.items[0].quality)
