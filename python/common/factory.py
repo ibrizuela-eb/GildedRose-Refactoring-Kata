@@ -1,4 +1,4 @@
-from . import (
+from .constants import (
     CHEESE_ITEM_NAMES,
     CONJURED_ITEM_NAMES,
     SULFURAS_ITEM_NAMES,
